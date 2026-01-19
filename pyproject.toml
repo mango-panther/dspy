@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 #replace_package_name_marker
 name="dspy"
 #replace_package_version_marker
-version="3.1.0"
+version="3.1.2"
 description = "DSPy"
 readme = "README.md"
 authors = [{ name = "Omar Khattab", email = "okhattab@stanford.edu" }]
@@ -109,6 +109,9 @@ exclude_lines = [
 ]
 
 [tool.pytest.ini_options]
+markers = [
+    "integration: tests requiring external dependencies (Deno, LM)",
+]
 filterwarnings = [
     # litellm uses deprecated pydantic config classes sometimes.
     # The issue has been fixed repeatedly, but still keeps showing up.
